@@ -1,7 +1,8 @@
 ## Barometer
 A reimagining of a classic barometer using a BMP280 pressure sensor
 
-![image](https://github.com/bigcrimping/barometer/assets/74270551/81647f00-765d-45f4-b5af-b0a433b8e515)
+![main_pic](https://github.com/bigcrimping/barometer/assets/74270551/15842e96-7193-433c-9364-c8636e680af8)
+
 
 The displays are both Dowty aircraft magnetic indicators which are similar to split-flap displays classically used in train stations
 
@@ -9,10 +10,19 @@ The displays are both Dowty aircraft magnetic indicators which are similar to sp
 
 The display can show high/low/normal pressure and up/down arrows + "auto". The relays are overkill (the power supply is 28v and the displays when active take ~30mA) but I had them to hand.
 
+The classical logic with a barometer is roughly:
+
+1) Low pressure means bad weather
+2) High pressure means good weather
+3) Constant pressure usually means good weather
+4) Rising air pressure is good
+5) Lowering air pressure is bad
+
 ## Project Code
 
 The code is here: (fill in once published)
 
+Fairly basic setup using the driver "BMx280MI" from Gregor Christandl, the code measures the pressure every 10 minutes and adds it to a circular buffer and uses the average to determine if the pressure is rising or falling. 
 
 ## Wiring
 
