@@ -26,7 +26,9 @@ The classical logic with a barometer is roughly:
 
 The code is here: https://github.com/bigcrimping/barometer/tree/main/code/pressure_meter
 
-Fairly basic setup using the driver "BMx280MI" from Gregor Christandl, the code measures the pressure every 10 minutes and adds it to a circular buffer and uses the average to determine if the pressure is rising or falling. 
+Fairly basic setup using the driver "BMx280MI" from Gregor Christandl, the code measures the pressure every 10 minutes and adds it to a circular buffer. The up/down arrows show the change over the last 3 hours (the standard "pressure tendency" window): more than 1 hPa up shows the up arrow, more than 1 hPa down shows the down arrow, otherwise both are off.
+
+Pressure flaps: above 30.20 inHg shows HIGH, between 29.80 and 30.20 inHg shows NORMAL, and below 29.80 inHg neither flap is energised, which leaves the indicator on its de-energised LOW legend. A small dead-band stops the relays chattering when the pressure sits on a boundary. If the sensor is not found at power-up the two arrows flash alternately. 
 
 ## Wiring
 
